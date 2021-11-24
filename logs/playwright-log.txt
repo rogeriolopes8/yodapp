@@ -1,0 +1,54 @@
+{"level":30,"time":"2021-10-11T03:12:06.836Z","pid":19068,"hostname":"RogerioLopes","msg":"Listening on 55400"}
+{"level":30,"time":"2021-10-11T03:12:07.761Z","pid":19068,"hostname":"RogerioLopes","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2021-10-11T03:12:07.787Z","pid":19068,"hostname":"RogerioLopes","msg":"Changed active context"}
+{"level":30,"time":"2021-10-11T03:12:08.031Z","pid":19068,"hostname":"RogerioLopes","msg":"Video path: undefined"}
+{"level":30,"time":"2021-10-11T03:12:08.031Z","pid":19068,"hostname":"RogerioLopes","msg":"Changed active page"}
+{"level":30,"time":"2021-10-11T03:12:09.090Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: text=Novo"}
+{"level":30,"time":"2021-10-11T03:12:09.280Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=.card-header-title >> text=Cadastrar novo usuário"}
+{"level":30,"time":"2021-10-11T03:12:09.560Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=input[name=\"nome\"]"}
+{"level":30,"time":"2021-10-11T03:12:09.615Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=input[name=\"email\"]"}
+{"level":30,"time":"2021-10-11T03:12:09.655Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=.ordem select"}
+{"level":30,"time":"2021-10-11T03:12:09.696Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=input[name=\"Data de nascimento\"]"}
+{"level":30,"time":"2021-10-11T03:12:09.970Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: xpath=(//header[@class=\"datepicker-header\"]//select)[1]"}
+{"level":30,"time":"2021-10-11T03:12:10.012Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: xpath=(//header[@class=\"datepicker-header\"]//select)[2]"}
+{"level":30,"time":"2021-10-11T03:12:10.055Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: xpath=//a[contains(@class, \"datepicker-cell\")]//span[text()=\"20\"]"}
+{"level":30,"time":"2021-10-11T03:12:10.140Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: id=insta"}
+{"level":30,"time":"2021-10-11T03:12:10.183Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: xpath=//input[@value=\"Cavaleiro Jedi\"]/..//span[@class=\"check\"]"}
+{"level":30,"time":"2021-10-11T03:12:10.256Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: xpath=//input[@name=\"comunications\"]/../span[@class=\"check\"]"}
+{"level":30,"time":"2021-10-11T03:12:10.339Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=button >> text=Cadastrar"}
+{"level":30,"time":"2021-10-11T03:12:10.420Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=.toast div"}
+{"level":30,"time":"2021-10-11T03:12:10.461Z","pid":19068,"hostname":"RogerioLopes","msg":"Strict mode is: true"}
+{"level":30,"time":"2021-10-11T03:12:10.487Z","pid":19068,"hostname":"RogerioLopes","msg":"Retrieved text for element css=.toast div containing Usuário cadastrado com sucesso!"}
+{"level":30,"time":"2021-10-11T03:12:10.737Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=.carousel"}
+{"level":30,"time":"2021-10-11T03:12:10.765Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: xpath=//td[contains(text(), \"yoda@jedi.com\")]/.."}
+{"level":30,"time":"2021-10-11T03:12:11.147Z","pid":19068,"hostname":"RogerioLopes","msg":"Changed active context"}
+{"level":30,"time":"2021-10-11T03:12:11.147Z","pid":19068,"hostname":"RogerioLopes","msg":"Changing current active page"}
+{"level":30,"time":"2021-10-11T03:12:11.147Z","pid":19068,"hostname":"RogerioLopes","msg":"Changed active page"}
+{"level":30,"time":"2021-10-11T03:12:11.167Z","pid":19068,"hostname":"RogerioLopes","msg":"Changed active context"}
+{"level":30,"time":"2021-10-11T03:12:11.168Z","pid":19068,"hostname":"RogerioLopes","msg":"Changing current active page"}
+{"level":30,"time":"2021-10-11T03:12:11.168Z","pid":19068,"hostname":"RogerioLopes","msg":"Changed active page"}
+{"level":30,"time":"2021-10-11T03:12:11.734Z","pid":19068,"hostname":"RogerioLopes","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2021-10-11T03:12:11.748Z","pid":19068,"hostname":"RogerioLopes","msg":"Changed active context"}
+{"level":30,"time":"2021-10-11T03:12:11.986Z","pid":19068,"hostname":"RogerioLopes","msg":"Video path: undefined"}
+{"level":30,"time":"2021-10-11T03:12:11.986Z","pid":19068,"hostname":"RogerioLopes","msg":"Changed active page"}
+{"level":30,"time":"2021-10-11T03:12:13.037Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: text=Novo"}
+{"level":30,"time":"2021-10-11T03:12:13.202Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=.card-header-title >> text=Cadastrar novo usuário"}
+{"level":30,"time":"2021-10-11T03:12:13.475Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=input[name=\"nome\"]"}
+{"level":30,"time":"2021-10-11T03:12:13.520Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=input[name=\"email\"]"}
+{"level":30,"time":"2021-10-11T03:12:13.563Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=.ordem select"}
+{"level":30,"time":"2021-10-11T03:12:13.600Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=input[name=\"Data de nascimento\"]"}
+{"level":30,"time":"2021-10-11T03:12:13.868Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: xpath=(//header[@class=\"datepicker-header\"]//select)[1]"}
+{"level":30,"time":"2021-10-11T03:12:13.903Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: xpath=(//header[@class=\"datepicker-header\"]//select)[2]"}
+{"level":30,"time":"2021-10-11T03:12:13.946Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: xpath=//a[contains(@class, \"datepicker-cell\")]//span[text()=\"20\"]"}
+{"level":30,"time":"2021-10-11T03:12:14.023Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: id=insta"}
+{"level":30,"time":"2021-10-11T03:12:14.065Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: xpath=//input[@name=\"comunications\"]/../span[@class=\"check\"]"}
+{"level":30,"time":"2021-10-11T03:12:14.239Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=button >> text=Cadastrar"}
+{"level":30,"time":"2021-10-11T03:12:14.310Z","pid":19068,"hostname":"RogerioLopes","msg":"Page|Frame|Element resolved elementSelector: css=.toast div"}
+{"level":30,"time":"2021-10-11T03:12:14.334Z","pid":19068,"hostname":"RogerioLopes","msg":"Strict mode is: true"}
+{"level":30,"time":"2021-10-11T03:12:14.363Z","pid":19068,"hostname":"RogerioLopes","msg":"Retrieved text for element css=.toast div containing Oops! O email é incorreto."}
+{"level":30,"time":"2021-10-11T03:12:14.664Z","pid":19068,"hostname":"RogerioLopes","msg":"Changed active context"}
+{"level":30,"time":"2021-10-11T03:12:14.664Z","pid":19068,"hostname":"RogerioLopes","msg":"Changing current active page"}
+{"level":30,"time":"2021-10-11T03:12:14.664Z","pid":19068,"hostname":"RogerioLopes","msg":"Changed active page"}
+{"level":30,"time":"2021-10-11T03:12:14.680Z","pid":19068,"hostname":"RogerioLopes","msg":"Changed active context"}
+{"level":30,"time":"2021-10-11T03:12:14.680Z","pid":19068,"hostname":"RogerioLopes","msg":"Changing current active page"}
+{"level":30,"time":"2021-10-11T03:12:14.680Z","pid":19068,"hostname":"RogerioLopes","msg":"Changed active page"}

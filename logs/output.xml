@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20211011 00:12:05.838" rpa="false" schemaversion="2">
+<suite id="s1" name="Cadastro" source="C:\GravidadeZERO\yodapp\tests\cadastro.robot">
+<test id="s1-t1" name="Deve cadastrar um novo personagem">
+<kw name="Start Session" library="base" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>slowMo=00:00:00</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20211011 00:12:07.254" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\GravidadeZERO\\yodapp\\logs\\browser\\traces\\f7ba6fbf-9acb-43f7-9d1d-7214ebf4d8d2"}</msg>
+<msg timestamp="20211011 00:12:07.756" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\GravidadeZERO\\yodapp\\logs\\browser\\traces\\f7ba6fbf-9acb-43f7-9d1d-7214ebf4d8d2"}</msg>
+<status status="PASS" starttime="20211011 00:12:07.253" endtime="20211011 00:12:07.757"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20211011 00:12:09.084" level="INFO">Successfully initialized new page object and opened url: https://yodapp-testing.vercel.app/</msg>
+<msg timestamp="20211011 00:12:09.084" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20211011 00:12:07.757" endtime="20211011 00:12:09.085"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:07.253" endtime="20211011 00:12:09.085"/>
+</kw>
+<kw name="Factory Yoda" library="users">
+<var>${user}</var>
+<msg timestamp="20211011 00:12:09.086" level="INFO">${user} = {'name': 'Mestre Yoda', 'email': 'yoda@jedi.com', 'ordem': 'Jedi', 'tpjedi': 'Cavaleiro Jedi', 'bdate': 'fevereiro-1970-20', 'instagram': '@yoda'}</msg>
+<status status="PASS" starttime="20211011 00:12:09.086" endtime="20211011 00:12:09.086"/>
+</kw>
+<kw name="Go To User Form" library="actions">
+<kw name="Click" library="Browser">
+<arg>text=Novo</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:09.087" endtime="20211011 00:12:09.273"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.card-header-title &gt;&gt; text=Cadastrar novo usuário</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20211011 00:12:09.554" level="INFO">Wait for Element with selector: css=.card-header-title &gt;&gt; text=Cadastrar novo usuário</msg>
+<status status="PASS" starttime="20211011 00:12:09.273" endtime="20211011 00:12:09.555"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:09.087" endtime="20211011 00:12:09.555"/>
+</kw>
+<kw name="Fill User Form" library="actions">
+<arg>${user}</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name="nome"]</arg>
+<arg>${user}[name]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20211011 00:12:09.557" level="INFO">Fills the text 'Mestre Yoda' in the given field.</msg>
+<status status="PASS" starttime="20211011 00:12:09.556" endtime="20211011 00:12:09.613"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name="email"]</arg>
+<arg>${user}[email]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20211011 00:12:09.614" level="INFO">Fills the text 'yoda@jedi.com' in the given field.</msg>
+<status status="PASS" starttime="20211011 00:12:09.613" endtime="20211011 00:12:09.653"/>
+</kw>
+<kw name="Select Options By" library="Browser">
+<arg>css=.ordem select</arg>
+<arg>text</arg>
+<arg>${user}[ordem]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:09.653" endtime="20211011 00:12:09.690"/>
+</kw>
+<kw name="Select Birth Date" library="actions">
+<arg>${user}[bdate]</arg>
+<kw name="Split String" library="String">
+<var>@{date}</var>
+<arg>${text_date}</arg>
+<arg>-</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20211011 00:12:09.692" level="INFO">@{date} = [ fevereiro | 1970 | 20 ]</msg>
+<status status="PASS" starttime="20211011 00:12:09.692" endtime="20211011 00:12:09.693"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=input[name="Data de nascimento"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:09.693" endtime="20211011 00:12:09.968"/>
+</kw>
+<kw name="Select Options By" library="Browser">
+<arg>xpath=(//header[@class="datepicker-header"]//select)[1]</arg>
+<arg>text</arg>
+<arg>${date}[0]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:09.968" endtime="20211011 00:12:10.010"/>
+</kw>
+<kw name="Select Options By" library="Browser">
+<arg>xpath=(//header[@class="datepicker-header"]//select)[2]</arg>
+<arg>value</arg>
+<arg>${date}[1]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:10.011" endtime="20211011 00:12:10.054"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=//a[contains(@class, "datepicker-cell")]//span[text()="${date}[2]"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:10.054" endtime="20211011 00:12:10.138"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:09.691" endtime="20211011 00:12:10.138"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=insta</arg>
+<arg>${user}[instagram]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20211011 00:12:10.139" level="INFO">Fills the text '@yoda' in the given field.</msg>
+<status status="PASS" starttime="20211011 00:12:10.139" endtime="20211011 00:12:10.179"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:09.556" endtime="20211011 00:12:10.180"/>
+</kw>
+<kw name="Select Jedi" library="actions">
+<arg>${user}[tpjedi]</arg>
+<kw name="Click" library="Browser">
+<arg>xpath=//input[@value="${tpjedi}"]/..//span[@class="check"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:10.181" endtime="20211011 00:12:10.253"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:10.180" endtime="20211011 00:12:10.253"/>
+</kw>
+<kw name="Check Accept Comunications" library="actions">
+<kw name="Click" library="Browser">
+<arg>xpath=//input[@name="comunications"]/../span[@class="check"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:10.254" endtime="20211011 00:12:10.336"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:10.254" endtime="20211011 00:12:10.336"/>
+</kw>
+<kw name="Submit User Form" library="actions">
+<kw name="Click" library="Browser">
+<arg>css=button &gt;&gt; text=Cadastrar</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:10.337" endtime="20211011 00:12:10.416"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:10.337" endtime="20211011 00:12:10.416"/>
+</kw>
+<kw name="Toaster Message Should Be" library="actions">
+<arg>Usuário cadastrado com sucesso!</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${element}</var>
+<arg>css=.toast div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211011 00:12:10.418" level="INFO">${element} = css=.toast div</msg>
+<status status="PASS" starttime="20211011 00:12:10.418" endtime="20211011 00:12:10.418"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${element}</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20211011 00:12:10.456" level="INFO">Wait for Element with selector: css=.toast div</msg>
+<status status="PASS" starttime="20211011 00:12:10.418" endtime="20211011 00:12:10.456"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>${element}</arg>
+<arg>equal</arg>
+<arg>${expected_message}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:10.456" endtime="20211011 00:12:10.489"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:10.417" endtime="20211011 00:12:10.489"/>
+</kw>
+<kw name="Go To Home Page" library="actions">
+<kw name="Go To" library="Browser">
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<msg timestamp="20211011 00:12:10.735" level="INFO">Successfully opened URL https://yodapp-testing.vercel.app/</msg>
+<status status="PASS" starttime="20211011 00:12:10.490" endtime="20211011 00:12:10.736"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.carousel</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20211011 00:12:10.762" level="INFO">Wait for Element with selector: css=.carousel</msg>
+<status status="PASS" starttime="20211011 00:12:10.736" endtime="20211011 00:12:10.762"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:10.489" endtime="20211011 00:12:10.762"/>
+</kw>
+<kw name="User Should Be visible" library="actions">
+<arg>${user}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${element}</var>
+<arg>xpath=//td[contains(text(), "${user}[email]")]/..</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211011 00:12:10.764" level="INFO">${element} = xpath=//td[contains(text(), "yoda@jedi.com")]/..</msg>
+<status status="PASS" starttime="20211011 00:12:10.764" endtime="20211011 00:12:10.764"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${element}</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20211011 00:12:10.782" level="INFO">Wait for Element with selector: xpath=//td[contains(text(), "yoda@jedi.com")]/..</msg>
+<status status="PASS" starttime="20211011 00:12:10.764" endtime="20211011 00:12:10.782"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:10.763" endtime="20211011 00:12:10.782"/>
+</kw>
+<kw name="End Session" library="base" type="TEARDOWN">
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20211011 00:12:11.137" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211011 00:12:10.783" endtime="20211011 00:12:11.137"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:10.783" endtime="20211011 00:12:11.137"/>
+</kw>
+<tag>happy</tag>
+<status status="PASS" starttime="20211011 00:12:07.250" endtime="20211011 00:12:11.138"/>
+</test>
+<test id="s1-t2" name="Email incorreto">
+<kw name="Start Session" library="base" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>slowMo=00:00:00</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20211011 00:12:11.261" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\GravidadeZERO\\yodapp\\logs\\browser\\traces\\10e31dae-f334-4686-9665-dce497e10689"}</msg>
+<msg timestamp="20211011 00:12:11.732" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\GravidadeZERO\\yodapp\\logs\\browser\\traces\\10e31dae-f334-4686-9665-dce497e10689"}</msg>
+<status status="PASS" starttime="20211011 00:12:11.260" endtime="20211011 00:12:11.732"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20211011 00:12:13.034" level="INFO">Successfully initialized new page object and opened url: https://yodapp-testing.vercel.app/</msg>
+<msg timestamp="20211011 00:12:13.034" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20211011 00:12:11.732" endtime="20211011 00:12:13.034"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:11.259" endtime="20211011 00:12:13.034"/>
+</kw>
+<kw name="Factory Darth Vader" library="users">
+<var>${user}</var>
+<msg timestamp="20211011 00:12:13.035" level="INFO">${user} = {'name': 'Darth Vader', 'email': 'vader&amp;gmail.com', 'ordem': 'Sith', 'bdate': 'dezembro-1980-20', 'instagram': '@vader'}</msg>
+<status status="PASS" starttime="20211011 00:12:13.035" endtime="20211011 00:12:13.035"/>
+</kw>
+<kw name="Go To User Form" library="actions">
+<kw name="Click" library="Browser">
+<arg>text=Novo</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:13.036" endtime="20211011 00:12:13.200"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.card-header-title &gt;&gt; text=Cadastrar novo usuário</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20211011 00:12:13.471" level="INFO">Wait for Element with selector: css=.card-header-title &gt;&gt; text=Cadastrar novo usuário</msg>
+<status status="PASS" starttime="20211011 00:12:13.200" endtime="20211011 00:12:13.471"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:13.036" endtime="20211011 00:12:13.471"/>
+</kw>
+<kw name="Fill User Form" library="actions">
+<arg>${user}</arg>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name="nome"]</arg>
+<arg>${user}[name]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20211011 00:12:13.473" level="INFO">Fills the text 'Darth Vader' in the given field.</msg>
+<status status="PASS" starttime="20211011 00:12:13.473" endtime="20211011 00:12:13.519"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[name="email"]</arg>
+<arg>${user}[email]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20211011 00:12:13.520" level="INFO">Fills the text 'vader&amp;gmail.com' in the given field.</msg>
+<status status="PASS" starttime="20211011 00:12:13.519" endtime="20211011 00:12:13.558"/>
+</kw>
+<kw name="Select Options By" library="Browser">
+<arg>css=.ordem select</arg>
+<arg>text</arg>
+<arg>${user}[ordem]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:13.558" endtime="20211011 00:12:13.598"/>
+</kw>
+<kw name="Select Birth Date" library="actions">
+<arg>${user}[bdate]</arg>
+<kw name="Split String" library="String">
+<var>@{date}</var>
+<arg>${text_date}</arg>
+<arg>-</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20211011 00:12:13.599" level="INFO">@{date} = [ dezembro | 1980 | 20 ]</msg>
+<status status="PASS" starttime="20211011 00:12:13.599" endtime="20211011 00:12:13.599"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=input[name="Data de nascimento"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:13.599" endtime="20211011 00:12:13.866"/>
+</kw>
+<kw name="Select Options By" library="Browser">
+<arg>xpath=(//header[@class="datepicker-header"]//select)[1]</arg>
+<arg>text</arg>
+<arg>${date}[0]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:13.867" endtime="20211011 00:12:13.902"/>
+</kw>
+<kw name="Select Options By" library="Browser">
+<arg>xpath=(//header[@class="datepicker-header"]//select)[2]</arg>
+<arg>value</arg>
+<arg>${date}[1]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:13.903" endtime="20211011 00:12:13.945"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=//a[contains(@class, "datepicker-cell")]//span[text()="${date}[2]"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:13.945" endtime="20211011 00:12:14.021"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:13.598" endtime="20211011 00:12:14.022"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>id=insta</arg>
+<arg>${user}[instagram]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20211011 00:12:14.022" level="INFO">Fills the text '@vader' in the given field.</msg>
+<status status="PASS" starttime="20211011 00:12:14.022" endtime="20211011 00:12:14.059"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:13.472" endtime="20211011 00:12:14.059"/>
+</kw>
+<kw name="Check Accept Comunications" library="actions">
+<kw name="Click" library="Browser">
+<arg>xpath=//input[@name="comunications"]/../span[@class="check"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:14.062" endtime="20211011 00:12:14.237"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:14.061" endtime="20211011 00:12:14.237"/>
+</kw>
+<kw name="Submit User Form" library="actions">
+<kw name="Click" library="Browser">
+<arg>css=button &gt;&gt; text=Cadastrar</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:14.238" endtime="20211011 00:12:14.305"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:14.238" endtime="20211011 00:12:14.305"/>
+</kw>
+<kw name="Toaster Message Should Be" library="actions">
+<arg>Oops! O email é incorreto.</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${element}</var>
+<arg>css=.toast div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20211011 00:12:14.307" level="INFO">${element} = css=.toast div</msg>
+<status status="PASS" starttime="20211011 00:12:14.307" endtime="20211011 00:12:14.307"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${element}</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20211011 00:12:14.331" level="INFO">Wait for Element with selector: css=.toast div</msg>
+<status status="PASS" starttime="20211011 00:12:14.307" endtime="20211011 00:12:14.332"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>${element}</arg>
+<arg>equal</arg>
+<arg>${expected_message}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20211011 00:12:14.332" endtime="20211011 00:12:14.364"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:14.306" endtime="20211011 00:12:14.365"/>
+</kw>
+<kw name="End Session" library="base" type="TEARDOWN">
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20211011 00:12:14.656" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211011 00:12:14.366" endtime="20211011 00:12:14.656"/>
+</kw>
+<status status="PASS" starttime="20211011 00:12:14.365" endtime="20211011 00:12:14.656"/>
+</kw>
+<tag>inv_email</tag>
+<status status="PASS" starttime="20211011 00:12:11.255" endtime="20211011 00:12:14.657"/>
+</test>
+<doc>Suite de testes do cadastro de personagens</doc>
+<status status="PASS" starttime="20211011 00:12:05.840" endtime="20211011 00:12:14.753"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">happy</stat>
+<stat pass="1" fail="0" skip="0">inv_email</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Cadastro">Cadastro</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
